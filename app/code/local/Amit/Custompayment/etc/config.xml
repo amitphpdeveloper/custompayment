@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Amit_Custompayment>
+	  <version>1.0.0.0</version>
+    </Amit_Custompayment>	
+  </modules>
+<!--  <frontend>
+     <routers>
+	    <Amit_Custompayment_somefree>
+		   <use>standard</use>
+		   <args>
+		     <module>Amit_Custompayment</module>
+			 <frontName>amit123-custompayment</frontName>
+		   </args>
+        </Amit_Custompayment_somefree>		
+	 </routers>
+  </frontend>-->
+  <frontend>
+    <routers>
+	  <Amit_Custompayment_index>
+	    <use>standard</use>
+		<args>
+		  <module>Amit_Custompayment</module>
+		  <frontName>customPayment</frontName> 
+		</args>
+	  </Amit_Custompayment_index>
+	</routers>
+  </frontend>
+  <global>
+       <models>
+	    <custompayment>
+		  <class>Amit_Custompayment_Model</class>
+		</custompayment>
+	  </models>
+	  <helpers>
+	    <custompayment>
+		<class>Amit_Custompayment_Helper</class>
+        </custompayment> 		
+	  </helpers>
+	  <blocks>
+	   <custompayment>
+	    <class>Amit_Custompayment_Block</class> 
+       </custompayment>
+	   </blocks>
+  </global>   
+  <default>
+    <payment>
+	  <custompayment>
+	     <model>custompayment/standard</model>
+		 <active>1</active>
+		 <order_status>Pending</order_status>
+		 <title>Customer Card</title>
+		 <payment_action>Sale</payment_action>
+		 <submit_url>https://testurl.com</submit_url>
+		 <merchant_id>Insert merchant id</merchant_id>
+		 <allowspecific>0</allowspecific>
+		 <sort_order>3</sort_order>
+	  </custompayment>
+	</payment>
+  </default>
+  
+
+  
+</config>
